@@ -1,105 +1,145 @@
-# Node.js Application Deployment on AWS EC2
+Here's the complete `README.md` with all the points you provided, formatted correctly with code blocks and additional information:
 
-This repository demonstrates the deployment of a Node.js application on an AWS EC2 instance. The project includes the use of a `.env` file to manage sensitive environment variables securely.
+```markdown
+# Node.js Application Deployment on AWS EC2 🚀
+
+This repository demonstrates the deployment of a Node.js application on an AWS EC2 instance. The project uses a `.env` file to securely manage environment variables like API keys and other sensitive information.
 
 ---
 
-## Project Overview
+## 📋 Project Overview
 
 This project covers:
 - Setting up an AWS EC2 instance.
 - Installing necessary dependencies (Git, Node.js, npm).
 - Deploying a Node.js application.
-- Managing sensitive credentials using a `.env` file.
-- Testing the application locally and on the server.
+- Using a `.env` file to manage sensitive credentials.
+- Testing the application both locally and on the server.
 
 ---
 
-## Prerequisites
+## ⚙️ Prerequisites
 
-1. AWS Account with EC2 instance created.
-2. Security group with port 3000 open.
-3. Basic understanding of Node.js and AWS.
+Before you begin, ensure you have the following:
+1. An **AWS Account** with an EC2 instance created.
+2. A **Security group** with port 3000 open.
+3. Basic knowledge of **Node.js** and **AWS**.
 
 ---
 
-## Setup and Deployment
+## 🛠 Setup and Deployment
 
-1. **Update the system:**
-   ```bash
-   sudo yum update -y
-Install Git and npm:
+### 1. **Update the System:**
+```bash
+sudo yum update -y
+```
 
-bash
-Copy code
+### 2. **Install Git and npm:**
+```bash
 sudo yum install git -y  
 sudo yum install npm -y  
-Clone the repository and navigate to the project directory:
+```
 
-bash
-Copy code
+### 3. **Clone the Repository:**
+Clone the repository and navigate to the project directory:
+```bash
 git clone <repository-url>  
 cd <repository-name>  
-Install dependencies:
+```
 
-bash
-Copy code
+### 4. **Install Dependencies:**
+```bash
 npm install  
-Create a .env file: Create a hidden file named .env in the project root and configure it as shown below:
+```
 
-plaintext
-Copy code
+### 5. **Create a `.env` File:**
+
+Create a hidden file `.env` in the project root and configure it as shown below:
+
+```plaintext
 DOMAIN=  
 PORT=3000  
 STATIC_DIR="./client"  
 PUBLISHABLE_KEY=<your-stripe-publishable-key>  
 SECRET_KEY=<your-stripe-secret-key>  
-Start the application locally:
+```
 
-bash
-Copy code
+### 6. **Start the Application Locally:**
+```bash
 npm run start  
-Visit http://localhost:3000 to ensure the application is working locally.
+```
+Go to `http://localhost:3000` to verify that the application is working locally.
 
-Deploy the application to EC2: Navigate to the EC2 instance (via AWS Session Manager or SSH) and repeat steps 4–6.
+### 7. **Deploy to EC2:**
 
-Test on the server: Access the application using the EC2 public IP:
+- Access the EC2 instance (via SSH or AWS Session Manager).
+- Repeat steps 4–6 on the EC2 instance.
 
-plaintext
-Copy code
+### 8. **Test on EC2:**
+Open your browser and visit the following to test the deployment:
+```plaintext
 http://<your-ec2-public-ip>:3000
-Environment Variables (.env)
-The .env file contains sensitive credentials such as API keys and configuration variables.
-Example content:
+```
 
-plaintext
-Copy code
+---
+
+## 🌱 Environment Variables (.env)
+
+The `.env` file holds sensitive information like API keys, which should not be exposed in your codebase.
+
+**Example `.env` content:**
+```plaintext
 DOMAIN=  
 PORT=3000  
 STATIC_DIR="./client"  
 PUBLISHABLE_KEY=<Stripe Publishable Key>  
 SECRET_KEY=<Stripe Secret Key>  
-Testing the Application
-Local Testing:
-Run the application on http://localhost:3000.
+```
 
-Server Testing:
-Visit http://<EC2-Public-IP>:3000 to confirm the deployment.
+This file helps keep sensitive credentials secure and makes it easier to configure the app for different environments.
 
-Screenshots
-Application Running Locally:
+---
 
-Application Running on EC2:
+## ✅ Testing the Application
 
-Why Use a .env File?
-The .env file helps to:
+- **Local Testing:**  
+  Run the application on `http://localhost:3000` to check locally.
 
-Secure Credentials: Prevent sensitive information (like API keys) from being exposed in the codebase.
-Easy Configuration: Centralize application settings for easy changes without modifying the source code.
-Environment variables are critical for:
+- **Server Testing:**  
+  Open the EC2 instance’s public IP in a browser: `http://<EC2-Public-IP>:3000`.
 
-Hiding public access keys.
-Configuring domain, port, and API keys dynamically.
-Ensuring secure deployment practices.
-css
-Copy code
+---
+
+## 🖼 Screenshots
+
+1. **Application Running Locally:**  
+   ![Localhost Screenshot](./screenshots/localhost.png)
+
+2. **Application Running on EC2:**  
+   ![EC2 Screenshot](./screenshots/ec2.png)
+
+---
+
+## 🔐 Why Use a `.env` File?
+
+The `.env` file is essential for securely managing environment variables and configuration settings. Here’s why it’s important:
+
+- **Secure Credentials:** Prevents exposing sensitive information (like API keys) in the codebase.
+- **Configuration Flexibility:** Easily adjust configuration without modifying source code.
+
+### Benefits of Environment Variables:
+- Hide public access keys.
+- Configure domain, port, and API keys dynamically.
+- Ensure best practices for secure deployment.
+
+---
+
+## 🖥 Tech Stack
+
+- **Node.js**  
+- **AWS EC2**  
+- **npm**  
+- **Stripe API**
+```
+
+This `README.md` is structured with code blocks and icons to maintain readability and clarity.
