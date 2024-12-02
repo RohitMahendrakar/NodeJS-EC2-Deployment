@@ -110,13 +110,15 @@ This file helps keep sensitive credentials secure and makes it easier to configu
 
 ---
 
+
 ## 🖼 Screenshots
 
 1. **Application Running Locally:**  
-   ![Localhost Screenshot](./screenshots/localhost.png)
+   ![Localhost Screenshot](./screenshots)
 
 2. **Application Running on EC2:**  
-   ![EC2 Screenshot](./screenshots/ec2.png)
+   ![EC2 Screenshot](./screenshots)
+
 
 ---
 
